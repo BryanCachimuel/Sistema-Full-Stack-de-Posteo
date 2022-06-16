@@ -9,12 +9,12 @@ router.post("/", validateToken, async(req, res) => {
     const found = await Likes.findOne({ where: { PostId: PostId, UserId: UserId } });
     if(!found){
         await Likes.create({PostId: PostId, UserId: UserId});
-        res.json("Le has dado like a este Post");
+        res.json({liked: true});
     }else{
         await Likes.destroy({
             where:{PostId: PostId, UserId: UserId},
         });
-        res.json("No le has dado like a este Post");
+        res.json({liked: false});
     }
 });
 
