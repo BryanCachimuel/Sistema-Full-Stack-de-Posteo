@@ -1,13 +1,14 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 
 /* Se usa useNavigate en vez de useHistory */
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
 
-    const [listOfPosts, setListOfPosts] = useState([]);
+  const [listOfPosts, setListOfPosts] = useState([]);
 
     let navigate = useNavigate()
 
@@ -39,28 +40,38 @@ function Home() {
       });
     };
 
-    return (
-        <div>
-        {listOfPosts.map((list) => {
-            return (
-            <div  key={list.id} className="post">
-                <div className="title"> {list.title} </div>
-                <div 
-                  className="body"  
-                  onClick={() => {navigate(`/post/${list.id}`)
-                  }}>{list.postText}
-                </div>
-
-                <div 
-                  className="footer">{list.username} 
-                  <button onClick={() => {likePost(list.id)}}>Like</button>
-                  <label>{list.Likes.length}</label>
-                </div>
+  return (
+    <div>
+      {listOfPosts.map((list) => {
+        return (
+          <div key={list.id} className="post">
+            <div className="title"> {list.title} </div>
+            <div
+              className="body"
+              onClick={() => {
+                navigate(`/post/${list.id}`);
+              }}
+            >
+              {list.postText}
             </div>
-            );
-        })}
-        </div>
-    );
+
+            <div className="footer">
+              {list.username}
+              <div className="buttons">
+                <ThumbUpAltIcon
+                  onClick={() => {
+                    likePost(list.id);
+                  }}
+                />
+              </div>
+
+              <label>{list.Likes.length}</label>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Home;
