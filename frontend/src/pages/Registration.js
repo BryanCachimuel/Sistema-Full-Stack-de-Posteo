@@ -22,14 +22,14 @@ function Registration() {
   };
 
   return (    
-    <div>
+    <div> 
       <Formik
         initialValues={initialValuesPost}
         onSubmit={onSubmitRegistration}
         validationSchema={validationSchemaPost}
       >
         <Form className="formContainer">
-
+          <h2 className="titulo">Registro de Usuarios</h2>
           <label>Nombre del Usuario: </label>
           <Field
             autocomplete="off"

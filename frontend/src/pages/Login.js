@@ -30,6 +30,7 @@ function Login() {
 
   return (
     <div className="loginContainer">
+      <h2 className="iniciar">Iniciar Sesión</h2>
       <label>Nombre de Usuario: </label>  
       <input
         type="text"
@@ -47,7 +48,7 @@ function Login() {
         }}
       />
 
-      <button onClick={login}>Iniciar Sessión</button>
+      <button onClick={login}>Iniciar Sesión</button>
     </div>
   );
 }
