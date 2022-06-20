@@ -65,7 +65,7 @@ function Home() {
                 />
               </div>
 
-              <label>{list.Likes.length}</label>
+              <label className="numlikes">{list.Likes.length}</label>
             </div>
           </div>
         );

@@ -71,7 +71,7 @@ function Post() {
         <div className="addCommentContainer">
           <input
             type="text"
-            placeholder="Comentario..."
+            placeholder="Escriba su comentario..."
             autoComplete="off"
             value={newComment}
             onChange={(event) => {
@@ -85,7 +85,8 @@ function Post() {
             return (
               <div key={comment.id} className="comment">
                 {comment.commentsBody}
-                <label>Nombre de Usuario: {comment.username}</label>
+                <br></br>
+                <label className="usuario">Nombre de Usuario: {comment.username}</label>
                 {authState.username === comment.username && <button onClick={() => {eliminarComentario(comment.id);}}>Eliminar</button>}
               </div>
             );
