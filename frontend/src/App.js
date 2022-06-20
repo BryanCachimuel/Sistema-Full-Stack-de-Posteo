@@ -8,6 +8,7 @@ import Registration from "./pages/Registration";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Inicio from "./pages/Inicio";
 
 
 /* el sessionsStorage hace que las rutas se oculten cuando el usuario esta logeado */
@@ -53,12 +54,13 @@ function App() {
            
             {!authState.status ? (
               <>
+                <Link to="/">Inicio</Link>
                 <Link to="/login">Iniciar Sessión</Link>
-                <Link to="/registro">Registro</Link>
+                <Link to="/registro">Registro</Link> 
               </>
             ) :(
               <>
-                <Link to="/">Home</Link>
+                <Link to="/">Inicio</Link>
                 <Link to="/crearpost">Crear Posts</Link>
               </>
             )}
@@ -70,7 +72,15 @@ function App() {
 
           </div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            {!authState.status ?(
+              <>
+                <Route path="/" element={<Inicio/>}></Route>
+              </>
+            ) :(
+              <>
+                <Route path="/" element={<Home />} />
+              </>
+            )}
             <Route path="/crearpost" element={<CrearPost />} />
             <Route path="/post/:id" element={<Post/>} />
             <Route path="/login" element={<Login/>}/>
