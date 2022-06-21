@@ -67,23 +67,32 @@ function App() {
             )}
 
            <div className="loggedInContainer">
-              <h2>{authState.username}</h2>
-              {authState.status && <button onClick={salir}> Salir</button>}
+             {!authState.status ? (
+              <>
+              </>
+             ) :(
+              <>
+               <h2>{authState.username}</h2>
+               {authState.status && <button onClick={salir}> Salir</button>}
+              </>
+             )}
            </div>  
 
           </div>
           <Routes>
             {!authState.status ?(
               <>
-                <Route path="/" element={<Inicio/>}></Route>
+                <Route path="/" element={<Inicio/>}/>
+                <Route path="/post/:id" element={<Inicio/>} />
+                <Route path="/crearpost" element={<Inicio />} />
               </>
             ) :(
               <>
                 <Route path="/" element={<Home />} />
+                <Route path="/post/:id" element={<Post/>} />
+                <Route path="/crearpost" element={<CrearPost />} />
               </>
             )}
-            <Route path="/crearpost" element={<CrearPost />} />
-            <Route path="/post/:id" element={<Post/>} />
             <Route path="/login" element={<Login/>}/>
             <Route path="/registro" element={<Registration/>}/>
             <Route path="*" element={<PaginaNoEncontrada/>}/>
