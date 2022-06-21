@@ -7,8 +7,9 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Inicio from "./pages/Inicio";
+import PaginaNoEncontrada from "./pages/PaginaNoEncontrada";
+import axios from "axios";
 
 
 /* el sessionsStorage hace que las rutas se oculten cuando el usuario esta logeado */
@@ -85,6 +86,7 @@ function App() {
             <Route path="/post/:id" element={<Post/>} />
             <Route path="/login" element={<Login/>}/>
             <Route path="/registro" element={<Registration/>}/>
+            <Route path="*" element={<PaginaNoEncontrada/>}/>
           </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
