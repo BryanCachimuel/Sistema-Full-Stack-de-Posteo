@@ -66,6 +66,21 @@ body {
   align-items: center;
 }
 
+.footer .eliminarpost {
+  width: 70px;
+  background-color: rgb(246, 8, 8);
+  color: white;
+  margin-left: 250px;
+  font-weight: bold;
+}
+
+.eliminarpost:hover {
+  background-color: dodgerblue;
+  border: 2px solid rgb(246, 8, 8);
+  color: rgb(246, 8, 8);
+  cursor: pointer;
+}
+
 .footer .numlikes{
   padding-right: 10px;
 }
