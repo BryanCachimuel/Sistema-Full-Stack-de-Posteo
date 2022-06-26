@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import "../css/App.css";
 
 /* Se usa useNavigate en vez de useHistory */
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import CrearPost from "./pages/CrearPost";
