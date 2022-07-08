@@ -1,7 +1,7 @@
 
 # <h1 align= "center">Sistema Full Stack de Posteo</h1>
 
-<h3> 🛠 Este Prototipo de Red social está desarrollado con las tecnologías siguientes: Node.js, express.js, sequelize, MySQL y React.js</h3>
+<h3> 🛠 Este Prototipo de Red social está desarrollado con las tecnologías siguientes: Node.js, express.js, JsonWebToken, sequelize, MySQL y React.js</h3>
 <hr>
 
 [![posts.png](https://i.postimg.cc/HspvbYFV/posts.png)](https://postimg.cc/K4H522G2)
@@ -12,6 +12,8 @@
 
 
 <p aligth="justify"> ⭐️ Función de Iniciar Sesión y Registro de Usuarios: Los usuarios para registrarse deben ingresar su nombre y contraseña.</p>
+
+<p aligth="justify"> ⭐️ Función de Token al incio de sesión: Cada usuario al iniciar sesión se le creará un token el cual tendra un determinado tiempo de expiración.</p>
 
 <p aligth="justify"> ⭐️ Función de Crear Post: Cada usuario podrá crea los posts que crea convenientes. </p>
 
